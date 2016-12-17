@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CardGameXServiceCore" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CardGameXServiceCore" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PlayerTablePosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="South" />
+      <xs:enumeration value="West" />
+      <xs:enumeration value="East" />
+      <xs:enumeration value="Notrh" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerTablePosition" nillable="true" type="tns:PlayerTablePosition" />
+  <xs:complexType name="ArrayOfBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bid" nillable="true" type="tns:Bid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBid" nillable="true" type="tns:ArrayOfBid" />
+  <xs:complexType name="Bid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bid_" type="tns:BidName" />
+      <xs:element minOccurs="0" name="CanBid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bid" nillable="true" type="tns:Bid" />
+  <xs:simpleType name="BidName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S7" />
+      <xs:enumeration value="C7" />
+      <xs:enumeration value="D7" />
+      <xs:enumeration value="H7" />
+      <xs:enumeration value="NT7" />
+      <xs:enumeration value="S8" />
+      <xs:enumeration value="C8" />
+      <xs:enumeration value="D8" />
+      <xs:enumeration value="H8" />
+      <xs:enumeration value="NT8" />
+      <xs:enumeration value="S9" />
+      <xs:enumeration value="C9" />
+      <xs:enumeration value="D9" />
+      <xs:enumeration value="H9" />
+      <xs:enumeration value="NT9" />
+      <xs:enumeration value="S10" />
+      <xs:enumeration value="C10" />
+      <xs:enumeration value="D10" />
+      <xs:enumeration value="H10" />
+      <xs:enumeration value="NT10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BidName" nillable="true" type="tns:BidName" />
+</xs:schema>

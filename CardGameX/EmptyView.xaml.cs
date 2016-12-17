@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CardGameX
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EmptyView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EmptyView : UserControl
     {
-        public MainWindow()
+        public EmptyView()
         {
             InitializeComponent();
         }

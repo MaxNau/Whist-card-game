@@ -4,6 +4,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameX", "CardGameX\CardGameX.csproj", "{A3B43999-BD8D-4B02-8D3C-5F48CE73126C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E094B245-3D3C-4740-8761-DE628585F743} = {E094B245-3D3C-4740-8761-DE628585F743}
+		{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6} = {CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameXService", "CardGameXService\CardGameXService.csproj", "{E094B245-3D3C-4740-8761-DE628585F743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameXServer", "CardGameXServer\CardGameXServer.csproj", "{E04C96AF-1BC8-4988-BA8A-CF103B842895}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E094B245-3D3C-4740-8761-DE628585F743} = {E094B245-3D3C-4740-8761-DE628585F743}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGameXServiceCore", "CardGameXServiceCore\CardGameXServiceCore.csproj", "{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +28,18 @@ Global
 		{A3B43999-BD8D-4B02-8D3C-5F48CE73126C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3B43999-BD8D-4B02-8D3C-5F48CE73126C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3B43999-BD8D-4B02-8D3C-5F48CE73126C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E094B245-3D3C-4740-8761-DE628585F743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E094B245-3D3C-4740-8761-DE628585F743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E094B245-3D3C-4740-8761-DE628585F743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E094B245-3D3C-4740-8761-DE628585F743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04C96AF-1BC8-4988-BA8A-CF103B842895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04C96AF-1BC8-4988-BA8A-CF103B842895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04C96AF-1BC8-4988-BA8A-CF103B842895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04C96AF-1BC8-4988-BA8A-CF103B842895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA910384-1B22-4FCD-917B-7CCF5C4F1CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

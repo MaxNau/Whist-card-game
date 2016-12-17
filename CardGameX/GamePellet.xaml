@@ -1,0 +1,55 @@
+﻿<Window Name="Pallet" x:Class="CardGameX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:CardGameX.Models"
+        xmlns:local="clr-namespace:CardGameX"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="350" MinWidth="525" Background="Green" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" LocationChanged="Window_LocationChanged" SizeChanged="Window_SizeChanged" WindowState="Maximized" Loaded="Window_Loaded" StateChanged="Pallet_StateChanged">
+
+    <Window.DataContext>
+        <models:VM></models:VM>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <DataTemplate x:Key="View1Template" DataType="{x:Type models:VM}">
+            <local:EmptyView />
+        </DataTemplate>
+
+        <DataTemplate x:Key="View2Template" DataType="{x:Type models:VM}">
+            <local:GamePelletView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <local:BiddingView MaxHeight="150" MaxWidth="150" x:Name="BiddingPopUp"  Panel.ZIndex="9999">
+            <local:BiddingView.Style>
+                <Style TargetType="UserControl">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding PlayerHandEnabled}" Value="false">
+                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlayerHandEnabled}" Value="true">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </local:BiddingView.Style>
+        </local:BiddingView>
+        <ContentControl DataContext="{Binding }" Content="{Binding }" >
+            <ContentControl.Style>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="ContentTemplate" Value="{StaticResource View1Template}" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SwitchView}" Value="3">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View2Template}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
+        
+    </Grid>
+</Window>
